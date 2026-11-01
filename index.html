@@ -21,7 +21,7 @@
      ===================================================================== -->
 <script>
   const NCR_CONFIG = {
-    PIXEL_ID: "YOUR_PIXEL_ID",               // e.g. "123456789012345"
+    PIXEL_ID: "657578459176303",             // Roofing Survey Pixel (Rudy's Events Manager)
     GHL_WEBHOOK_URL: "YOUR_GHL_INBOUND_WEBHOOK_URL", // GHL > Automation > Workflow > Trigger: Inbound Webhook
     PHONE_DISPLAY: "(408) 540-3870",
     PHONE_LINK: "+14085403870"
@@ -35,7 +35,7 @@
   fbq('init', NCR_CONFIG.PIXEL_ID);
   fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt="" /></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=657578459176303&ev=PageView&noscript=1" alt="" /></noscript>
 <!-- ===================== END META PIXEL ===================== -->
 
 <style>
@@ -179,6 +179,28 @@
   .tstats div{flex:1;min-width:110px;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:14px}
   .tstats b{display:block;font:800 1.3rem Poppins;color:var(--ink)}
   .tstats small{color:var(--muted);font-size:.8rem}
+  .project{background:#fff}
+  .pgrid{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center;margin-bottom:22px}
+  .pvideo{position:relative;border-radius:18px;overflow:hidden;background:#000;box-shadow:var(--shadow);aspect-ratio:16/9}
+  .pvideo video{width:100%;height:100%;object-fit:cover;display:block}
+  .pinfo h3{font-size:1.5rem;color:var(--ink);line-height:1.25}
+  .pinfo p{color:var(--muted);margin:10px 0 4px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px}
+  .gitem{position:relative;border:0;padding:0;border-radius:12px;overflow:hidden;cursor:zoom-in;background:#eee}
+  .gitem:first-child{grid-column:span 2;grid-row:span 2}
+  @media (min-width:961px){.gitem:nth-child(6),.gitem:nth-child(7){grid-column:span 2}}
+  .gitem img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .gitem:hover img{transform:scale(1.05)}
+  .gitem span{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font:600 .8rem Inter;text-align:left;opacity:0;transition:.25s}
+  .gitem:hover span,.gitem:focus-visible span{opacity:1}
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.92);display:none;align-items:center;justify-content:center;padding:16px}
+  .lb.open{display:flex}
+  .lb figure{max-width:min(1200px,100%);text-align:center}
+  .lb img{max-width:100%;max-height:80vh;border-radius:10px}
+  .lb figcaption{color:#ddd;margin-top:10px;font-size:.92rem}
+  .lb-x{position:absolute;top:12px;right:16px;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:0;color:#fff;font-size:2rem;width:46px;height:46px;border-radius:50%;cursor:pointer}
+  .lb-prev{left:12px}.lb-next{right:12px}
   .brands{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
   .brands span{font:600 .85rem Poppins;padding:9px 14px;border:1px solid var(--line);border-radius:10px;color:var(--ink-2)}
 
@@ -214,6 +236,8 @@
   @media (max-width:960px){
     .proof .grid,.team .grid,.featured{grid-template-columns:1fr}
     .grgrid{grid-template-columns:1fr 1fr}
+    .pgrid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(3,1fr);grid-auto-rows:150px}
     .hero .wrap{grid-template-columns:1fr;grid-template-areas:"intro" "form" "details";row-gap:22px}
     .trust .wrap{grid-template-columns:1fr 1fr}
     .svc{grid-template-columns:1fr 1fr}
@@ -225,6 +249,8 @@
     .options,.row2{grid-template-columns:1fr}
     .svc{grid-template-columns:1fr}
     .grgrid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:120px}
+    .gitem span{opacity:1;font-size:.7rem;padding:16px 8px 6px}
     .featured img{min-height:220px}
     .fbody{padding:22px}
     .trust .wrap{grid-template-columns:1fr}
@@ -400,6 +426,52 @@
     </div>
   </div>
 </section>
+
+<!-- RECENT PROJECT -->
+<section class="project">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Recent project</span>
+      <h2>Roof Mildew &amp; Algae Removal</h2>
+      <p>Real drone footage and photos from a North City Roofing job.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pvideo">
+        <video autoplay muted loop playsinline preload="metadata" poster="projects/algae-drone-poster.jpg">
+          <source src="projects/algae-drone.mp4" type="video/mp4">
+        </video>
+        <span class="vbadge">🚁 Drone footage</span>
+      </div>
+      <div class="pinfo">
+        <h3>Those black streaks aren't dirt.</h3>
+        <p>Dark streaks and mildew on a roof are usually algae. Besides making the house look older, they hold moisture against the shingles. On this home our crew treated the whole roof by hand, at low pressure — no harsh power-washing that strips shingle granules.</p>
+        <ul class="checks dark">
+          <li>Full drone and on-roof inspection first</li>
+          <li>Low-pressure treatment, section by section</li>
+          <li>Careful work around vents, flashing and gutters</li>
+        </ul>
+        <a href="#form" class="btn btn-primary js-scroll">Get My Roof Checked — Free</a>
+      </div>
+    </div>
+    <div class="gallery">
+      <button type="button" class="gitem" data-i="0" data-cap="The project home — a single-story Bay Area house"><img src="projects/algae-7.jpg" alt="The project home — a single-story Bay Area house" loading="lazy"><span>The project home — a single-story Bay Area house</span></button>
+      <button type="button" class="gitem" data-i="1" data-cap="Treatment underway on the front slope"><img src="projects/algae-6.jpg" alt="Treatment underway on the front slope" loading="lazy"><span>Treatment underway on the front slope</span></button>
+      <button type="button" class="gitem" data-i="2" data-cap="Dark algae streaks running down the shingles"><img src="projects/algae-3.jpg" alt="Dark algae streaks running down the shingles" loading="lazy"><span>Dark algae streaks running down the shingles</span></button>
+      <button type="button" class="gitem" data-i="3" data-cap="Full-roof walk-through before cleaning"><img src="projects/algae-4.jpg" alt="Full-roof walk-through before cleaning" loading="lazy"><span>Full-roof walk-through before cleaning</span></button>
+      <button type="button" class="gitem" data-i="4" data-cap="Low-pressure cleaning, section by section"><img src="projects/algae-1.jpg" alt="Low-pressure cleaning, section by section" loading="lazy"><span>Low-pressure cleaning, section by section</span></button>
+      <button type="button" class="gitem" data-i="5" data-cap="Treating the most heavily stained area"><img src="projects/algae-2.jpg" alt="Treating the most heavily stained area" loading="lazy"><span>Treating the most heavily stained area</span></button>
+      <button type="button" class="gitem" data-i="6" data-cap="Working around every vent and flashing"><img src="projects/algae-5.jpg" alt="Working around every vent and flashing" loading="lazy"><span>Working around every vent and flashing</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" aria-hidden="true">
+  <button type="button" class="lb-x" aria-label="Close">×</button>
+  <button type="button" class="lb-nav lb-prev" aria-label="Previous">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button type="button" class="lb-nav lb-next" aria-label="Next">›</button>
+</div>
 
 <!-- VIDEO TESTIMONIAL -->
 <section class="proof">
@@ -651,6 +723,17 @@
       } else { console.warn('GHL_WEBHOOK_URL not set — lead not sent', Object.fromEntries(data)); }
     }catch(e){ console.error(e); }
 
+    // Advanced matching: give Meta the lead's details (the Pixel hashes them in the browser)
+    const el=form.elements, digits=(el.phone.value||'').replace(/\D/g,'');
+    safeFbq('init', NCR_CONFIG.PIXEL_ID, {
+      em:(el.email.value||'').trim().toLowerCase(),
+      ph: digits.length===10 ? '1'+digits : digits,
+      fn:(el.first_name.value||'').trim().toLowerCase(),
+      ln:(el.last_name.value||'').trim().toLowerCase(),
+      ct:(el.city.value||'').replace(/[^a-z]/gi,'').toLowerCase(),
+      st:'ca', country:'us'
+    });
+
     // Pixel: Lead (the conversion Meta optimizes for)
     safeFbq('track','Lead',{
       content_name: form.elements.service.value || 'Roof Inspection',
@@ -664,6 +747,18 @@
 
   /* Pixel: video plays (builds 'watched our video' retargeting audiences) */
   document.querySelectorAll('.js-video').forEach(v=>{let sent=false;v.addEventListener('play',()=>{if(!sent){sent=true;safeFbq('trackCustom','VideoPlay',{video:v.dataset.name});}});});
+
+  /* Project gallery lightbox */
+  const gItems=[...document.querySelectorAll('.gitem')], lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
+  let gi=0, gSent=false;
+  function openLb(i){gi=(i+gItems.length)%gItems.length;const it=gItems[gi];lbImg.src=it.querySelector('img').src;lbImg.alt=it.dataset.cap;lbCap.textContent=it.dataset.cap;lb.classList.add('open');lb.setAttribute('aria-hidden','false');if(!gSent){gSent=true;safeFbq('trackCustom','GalleryView',{project:'Mildew & Algae Removal'});}}
+  function closeLb(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');}
+  gItems.forEach((it,i)=>it.addEventListener('click',()=>openLb(i)));
+  lb.querySelector('.lb-x').addEventListener('click',closeLb);
+  lb.querySelector('.lb-prev').addEventListener('click',e=>{e.stopPropagation();openLb(gi-1);});
+  lb.querySelector('.lb-next').addEventListener('click',e=>{e.stopPropagation();openLb(gi+1);});
+  lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')openLb(gi-1);if(e.key==='ArrowRight')openLb(gi+1);});
 
   /* smooth scroll for CTA buttons */
   document.querySelectorAll('.js-scroll').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.getElementById('form').scrollIntoView({behavior:'smooth'});}));
